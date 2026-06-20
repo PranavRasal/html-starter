@@ -64,8 +64,8 @@ nav li.active{
 }
 
 .hero{
-    max-width:1400px;
-    margin:auto;
+    width:1400px;
+    margin:0 auto;
 
     display:flex;
     align-items:center;
@@ -73,6 +73,35 @@ nav li.active{
 
     padding:60px 48px;
     gap:60px;
+}
+
+/* Scale-down rules to preserve desktop layout visually on smaller viewports */
+@media (max-width:1400px){
+    .hero{
+        transform-origin: top center;
+        transform: scale(0.91); /* 1280/1400 ≈ 0.914 */
+    }
+}
+
+@media (max-width:1280px){
+    .hero{
+        transform-origin: top center;
+        transform: scale(0.8); /* 1024/1400 ≈ 0.73, choose 0.8 for better readability */
+    }
+}
+
+@media (max-width:768px){
+    .hero{
+        transform-origin: top center;
+        transform: scale(0.55);
+    }
+}
+
+@media (max-width:375px){
+    .hero{
+        transform-origin: top center;
+        transform: scale(0.35);
+    }
 }
 
 .hero-left{
